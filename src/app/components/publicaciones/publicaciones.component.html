@@ -1,0 +1,24 @@
+   <!-- Page Heading -->
+   <h1 class="my-4">Publicaciones
+    <small>Waylla</small>
+  </h1>
+  
+  <ul *ngFor="let post of posts | async">
+  <div class="row">
+    <div class="col-lg-4 col-lg-6 portfolio-item">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="{{post.image_url}}" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#">{{post.titulo}}</a>
+          </h4>
+          <p class="card-text">{{post.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ul>
+
+  
+
+  <!-- /.row -->

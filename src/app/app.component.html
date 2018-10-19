@@ -1,0 +1,69 @@
+
+   <!-- Navigation -->
+   <nav class="navbar navbar-expand-md navbar-dark"   style="background-color: #689F38;" >
+      <a class="navbar-brand" href="#">Waylla</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown active" *ngIf="isLogin">
+                <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [routerLink]="['privado']">Lomas</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a class="dropdown-item" [routerLink]="['privado']">Información</a>
+                </div>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['publicaciones']" *ngIf="isLogin" >Publicaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['eventos']" *ngIf="isLogin">Eventos</a>
+          </li>
+        </ul>
+          <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['login']" *ngIf="!isLogin">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['register']" *ngIf="!isLogin">Registrarse</a>
+          </li>
+          <li class="nav-item" *ngIf="isLogin" >
+            <a class="nav-link"  href="#" (click)="OnClickLogout()" >Salir</a>
+          </li>
+        </ul>
+         
+        
+        <!--<form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>-->
+      </div>
+    </nav>
+
+
+
+ <!--<ul *ngFor="let post of posts | async">
+  
+  <div class="container col-lg-offset-4" style="margin-top: 20px" >
+    <div class="row">
+            <div class="col-md-5">
+              <a href="#">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="{{post.imagen}}" alt="">
+              </a>
+            </div>
+            <div class="col-md-5">
+              <h3>{{ post.nombre}}</h3>
+              <p>{{post.descripcion}}</p>
+              <p>{{post.distrito}}</p>
+              <p>{{post.ubicacion}}</p>
+              <a class="btn btn-primary" style="background-color: #689F38;" href="#">Ver más</a>
+            </div>
+    </div>
+  </div>
+  <hr>
+</ul>
+
+ --><div class="container">
+  <router-outlet></router-outlet>
+ </div>
+

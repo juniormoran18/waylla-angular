@@ -1,0 +1,32 @@
+<div class="container">
+
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Bienvenido a los Eventos</h1>
+    <p class="lead">Los eventos en Waylla son creado por miembros de la comunidad que desean ir acompañados a las diferentes lomas de la ciudad de Lima. </p>
+    <a class="btn btn-primary btn-lg" style="background-color: #689F38;" (click)="addPost()">Crear un evento!</a>
+  </header>
+
+  <!-- Page Features -->
+  <div class="row text-center">
+
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let post of posts | async">
+      <div class="card">
+        <img class="card-img-top" src="assets/img/img0.jpg" alt="">
+        <div class="card-body">
+          <h4 class="card-title">{{post.titulo}}</h4>
+          <p class="card-text">{{post.descripcion}}</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary" style="background-color: #689F38;" >Enterate más!</a>
+        </div>
+      </div>
+    </div>
+
+  
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
